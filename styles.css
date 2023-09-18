@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    background-color: #eee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: #333;
+    color: #eee;
+}
+
+header {
+    width: 65%;
+    margin: 18px auto 8px;
+    color: #eee;
+    font-weight: 300;
+}
+
+#frame {
+    background-color: hsl(160, 80%, 80%);
+    color: hsl(29, 57%, 53%);
+    width: 840px;
+    height: 884px;
+    font-family: 'Cedarville cursive', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    border-radius: 2%;
+    box-shadow: 0 0 0.1rem hsl(160, 75%, 80%)
+}
+
+#grid {
+    background-color: linen;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 1%;
+    margin: 4px auto;
+    box-shadow: inset 1px 1px 0.75rem darkgrey;
+}
+
+.square {
+    background: transparent;
+    width: 3px;
+    height: 3px;
+}
+
+#controller {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, serif;
+    padding: 8px 14px 14px;
+}
+
+#inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+label {
+    font-size: 18px;
+    color: black;
+    font-weight: 300;
+}
+
+input {
+    border: 2px solid black;
+    border-radius: 12%;
+    height: 20px;
+}
+
+button#erase, button#set {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 2px solid hsl(29, 57%, 53%);
+    border-radius: 50%;
+    box-shadow: 1px 2px 0.3rem gray;
+    color: hsl(29, 57%, 53%);
+    font-weight: 300;
+}
+
+button#erase:hover, button#set:hover {
+    cursor: pointer;
+    -webkit-transform: translateX(1px) translateY(2px);
+    transform: translateX(1px) translateY(2px);
+    box-shadow: 0 0 0.2rem gray;
+}
+
+footer {
+    height: 42px;
+    padding: 8px 0;
+}
+
+@media (max-width: 1069px) {
+    #frame {
+        width: 720px;
+        height: 750px;
+    }
+
+    #grid {
+        width: 600px;
+        height: 600px; 
+    }
+
+    button#erase, button#set {
+        height: 3.25rem;
+        width: 3.25rem;
+    }
+}
+
+@media (max-width: 729px) {
+    #frame {
+        width: 400px;
+        height: 424px;
+        font-size: 0.7rem;
+    }
+
+    #grid {
+        width: 300px;
+        height: 300px; 
+    }
+
+    button#erase, button#set {
+        height: 2.9rem;
+        width: 2.9rem;
+    }
+}
