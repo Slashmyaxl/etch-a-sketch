@@ -9,16 +9,18 @@
 }
 
 body {
-    background-color: #eee;
+    background: linear-gradient(90deg, hsl(21, 38%, 37%) 14.85%, #111 15%, hsl(21, 38%, 37%) 15.15%, 
+    hsl(21, 38%, 37%) 41.85%, #111 42%, hsl(21, 38%, 37%) 42.15%, 
+    hsl(21, 38%, 37%) 68.85%, #111 69%, hsl(21, 38%, 37%) 69.15%,
+    hsl(21, 38%, 37%) 95.85%, #111 96%, hsl(21, 38%, 37%) 96.15%);
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 24px;
     align-items: center;
     text-align: center;
     height: 100vh;
-    background: #333;
     color: #eee;
 }
 
@@ -26,12 +28,16 @@ header {
     width: 65%;
     margin: 28px auto;
     color: #eee;
-    font-weight: 300;
+    font-weight: 100;
+}
+
+header h2 {
+    font-size: 1.2rem;
 }
 
 #frame {
     background: hsl(160, 80%, 80%);
-    color: hsl(29, 57%, 53%);
+    color: hsl(29, 65%, 63%);
     width: 740px;
     height: 772px;
     font-family: 'Cedarville cursive', serif;
@@ -41,7 +47,7 @@ header {
     align-items: center;
     padding: 3px;
     border-radius: 2%;
-    box-shadow: -1px -4px 2rem rgba(240, 240, 240, 0.2);
+    box-shadow: 1px 4px 1rem rgba(15, 15, 15, 0.4);
 }
 
 #grid {
@@ -53,6 +59,10 @@ header {
     border-radius: 1%;
     margin: 2px auto;
     box-shadow: inset 1px 1px 0.5rem #333;
+}
+
+.square {
+    background-color: transparent;
 }
 
 #controller {
@@ -80,9 +90,9 @@ header {
 #inputs {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background-color:hsl(29, 57%, 53%);
-    box-shadow: inset 0 0 .3rem #222;
+    gap: 4px;
+    background-color:hsl(29, 65%, 63%);
+    box-shadow: inset 0 0 .3rem gray;
     padding: 4px;
     border-radius: 10%
 }
@@ -100,7 +110,7 @@ input {
     font-family: monospace;
     height: 22px;
     width: 60px;
-    background: hsl(29, 57%, 53%);
+    background: hsl(29, 65%, 63%);
     font-weight: 300;
     padding: 2px 6px;
     color: white;
@@ -109,11 +119,12 @@ input {
 button#erase, button#set {
     height: 3.5rem;
     width: 3.5rem;
-    border: 2px solid hsl(29, 57%, 53%);
+    border: 2px solid hsl(29, 65%, 63%);
     border-radius: 50%;
     box-shadow: 1px 2px 0.3rem gray;
-    color: hsl(29, 57%, 53%);
-    font-weight: 300;
+    color: hsl(29, 65%, 63%);
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 button#erase:hover, button#set:hover {

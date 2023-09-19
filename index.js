@@ -1,16 +1,18 @@
 const grid = document.querySelector('#grid');
 const setBtn = document.querySelector('button#set');
+const eraseBtn = document.querySelector('button#erase');
 const userInput = document.querySelector('input#grid-size');
-
-makeGrid(userInput.value);
+let squares;
 
 function makeGrid(size) {
 
-    const squareDimension = 100/size;
+    console.log(size);
 
-    console.log(`userInput: ${userInput.value}`);
-    console.log(`Dimension: ${squareDimension}`);
-    console.log(`Fxn argument (size): ${size}`);
+    size > 100 ? size = 100 : size;
+
+    console.log(size);
+
+    const squareDimension = 100/size;
 
     for (let i = 1; i <= size ** 2; i++) {
         
@@ -19,8 +21,18 @@ function makeGrid(size) {
         newSquare.style.width = `${squareDimension}%`;
         newSquare.style.height = `${squareDimension}%`;
         grid.appendChild(newSquare);
-        
     }
+
+    squares = document.querySelectorAll('.square');
+    allowDrawing();
+}
+
+function allowDrawing() {
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+                square.style.backgroundColor = '#111';
+            })
+    });
 }
 
 function clearGrid() {
@@ -29,7 +41,19 @@ function clearGrid() {
     }
 }
 
+function eraseGrid() {
+    squares.forEach((square) => {
+        square.style.backgroundColor = 'transparent';
+    });
+}
+
+makeGrid(userInput.value);
+
 setBtn.addEventListener('click', () => {
     clearGrid();
     makeGrid(userInput.value);
+});
+
+eraseBtn.addEventListener('click', () => {
+    eraseGrid();
 });
