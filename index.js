@@ -29,7 +29,7 @@ function makeGrid(size) {
 
 function allowDrawing() {
     squares.forEach((square) => {
-        square.addEventListener('mouseover', () => {
+        square.addEventListener('mouseover' || 'mousedown', () => {
                 square.style.backgroundColor = '#111';
             })
     });
