@@ -28,10 +28,10 @@ function allowDrawing() {
     squares.forEach((square) => {
         let opacityValue = 0.1;
 
-        square.addEventListener('mouseover', (e) => {
-            square.style.backgroundColor = `rgba(0, 0, 0, ${opacityValue})`;
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = '#000';
+            square.style.opacity = opacityValue;
             opacityValue += 0.1;
-            console.log(e.target.style.backgroundColor);
         });      
     });    
 }
