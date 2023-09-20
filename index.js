@@ -6,11 +6,7 @@ let squares;
 
 function makeGrid(size) {
 
-    console.log(size);
-
     size > 100 ? size = 100 : size;
-
-    console.log(size);
 
     const squareDimension = 100/size;
 
@@ -28,11 +24,16 @@ function makeGrid(size) {
 }
 
 function allowDrawing() {
+
     squares.forEach((square) => {
-        square.addEventListener('mouseover', () => {
-                square.style.backgroundColor = '#111';
-            })
-    });
+        let opacityValue = 0.1;
+
+        square.addEventListener('mouseover', (e) => {
+            square.style.backgroundColor = `rgba(0, 0, 0, ${opacityValue})`;
+            opacityValue += 0.1;
+            console.log(e.target.style.backgroundColor);
+        });      
+    });    
 }
 
 function clearGrid() {
@@ -47,8 +48,6 @@ function eraseGrid() {
     });
 }
 
-makeGrid(userInput.value);
-
 setBtn.addEventListener('click', () => {
     clearGrid();
     makeGrid(userInput.value);
@@ -57,3 +56,5 @@ setBtn.addEventListener('click', () => {
 eraseBtn.addEventListener('click', () => {
     eraseGrid();
 });
+
+makeGrid(userInput.value);
