@@ -6,6 +6,7 @@ let squares;
 
 function makeGrid(size) {
 
+    size < 16 ? size = 16 : size;
     size > 100 ? size = 100 : size;
 
     const squareDimension = 100/size;
@@ -26,11 +27,11 @@ function makeGrid(size) {
 function allowDrawing() {
 
     squares.forEach((square) => {
+
         let opacityValue = 0.1;
 
         square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = '#000';
-            square.style.opacity = opacityValue;
+            square.style.backgroundColor = `rgba(0, 0, 0, ${opacityValue})`;
             opacityValue += 0.1;
         });      
     });    
@@ -46,6 +47,7 @@ function eraseGrid() {
     squares.forEach((square) => {
         square.style.backgroundColor = 'transparent';
     });
+    allowDrawing();
 }
 
 setBtn.addEventListener('click', () => {
